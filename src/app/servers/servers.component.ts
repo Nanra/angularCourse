@@ -18,6 +18,8 @@ export class ServersComponent implements OnInit {
 
   // Property for Binding
   allowNewServer = false;
+  serverCreateStatus = 'Server was Offline!';
+  buttonLabel = 'Active';
 
   constructor() {
     setTimeout (() => {
@@ -26,6 +28,17 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onServerCreated() {
+    if (this.buttonLabel === 'Active') {
+      this.serverCreateStatus = 'Server Online!';
+      this.buttonLabel = 'Deactive';
+    } else {
+      this.serverCreateStatus = 'Server Offline!';
+      this.buttonLabel = 'Active';
+    }
+
   }
 
 }
