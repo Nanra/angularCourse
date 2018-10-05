@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
 
 })
 export class ServerComponent {
+
+  // Var for Interpolation Binding
   serverID: Number = 7;
   serverStatus: String = 'Active';
+
+  // Method for status server
+  getServerStatus() {
+    return this.serverStatus;
+  }
 }
